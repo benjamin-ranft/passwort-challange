@@ -75,5 +75,16 @@ class PasswortArrayCheckTest {
     }
 
 
-
+    @Test
+    public void isPasswordArrayValidTest() {
+        String [] passwords = {"Passwort123", "Passwort123", "Passwort123", "Passwort123", "Passwort123"};
+        boolean allPasswordsRight = PasswortArrayCheck.isPasswordArrayValid(passwords);
+        assertTrue(allPasswordsRight);
+    }
+    @Test
+    public void isPasswordArrayNotValidTest() {
+        String [] passwords = {"Passwort123", "Passwort", "Passwort123", "Passwort123", "Passwort123"};
+        boolean onePasswordWrong = PasswortArrayCheck.isPasswordArrayValid(passwords);
+        assertFalse(onePasswordWrong);
+    }
 }

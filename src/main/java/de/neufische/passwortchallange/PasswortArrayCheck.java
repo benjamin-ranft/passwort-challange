@@ -6,27 +6,26 @@ public class PasswortArrayCheck {
 
         String [] passwords = {"1234", "BROTFÜRDIEWELT", "baumhaus", "Passwort123", "Jutesack"};
 
-        System.out.println(getStringsOutOfPasswordArray(passwords));
+        System.out.println(isPasswordArrayValid(passwords));
 
         //System.out.println(passwords[2]);
 
     }
 
-    public static boolean getStringsOutOfPasswordArray (String[] passwords){
+
+    public static boolean isPasswordArrayValid(String[] passwords){
 
         for (int i = 0; i < passwords.length; i++){
             String singlePassword = passwords[i];
             boolean isLengthValid = checkPasswordLength(singlePassword);
             boolean isUpperLowerValid = checkIfPasswordContainsUpperLowerCase(singlePassword);
             boolean isNumberPresent = checkIfPasswordContainsNumber(singlePassword);
-
-            if (isLengthValid && isUpperLowerValid && isNumberPresent == true){
-                System.out.println(singlePassword);
-                System.out.println(i);
-                return true;
+            boolean isValidPassword = isLengthValid && isUpperLowerValid && isNumberPresent;
+            if (!isValidPassword) {
+                return false;
             }
         }
-        return false;
+        return true;
     }
 
 
