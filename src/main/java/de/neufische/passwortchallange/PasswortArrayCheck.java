@@ -1,5 +1,8 @@
 package de.neufische.passwortchallange;
 
+
+import java.util.Arrays;
+
 public class PasswortArrayCheck {
 
     public static void main(String[] args) {
@@ -8,9 +11,11 @@ public class PasswortArrayCheck {
 
         System.out.println(isPasswordArrayValid(passwords));
 
-        //System.out.println(passwords[2]);
+
+        System.out.println(passwords[2]);
 
     }
+
 
 
     public static boolean isPasswordArrayValid(String[] passwords){
@@ -27,7 +32,6 @@ public class PasswortArrayCheck {
         }
         return true;
     }
-
 
     public static boolean checkPasswordLength (String password){
         int minLength = 8;
