@@ -14,8 +14,10 @@ public class PasswortArrayCheck {
 
         System.out.println(passwords[2]);
 
+        String[][] passwordsTwoDim = checkAllPasswordsAndPutItIntoTwoDimArray(passwords);
+        //'Arrays.deepToString()' converts multi-dimensional array to strings
+        System.out.println(Arrays.deepToString(passwordsTwoDim));
     }
-
 
 
     public static boolean isPasswordArrayValid(String[] passwords){
@@ -31,6 +33,40 @@ public class PasswortArrayCheck {
             }
         }
         return true;
+    }
+
+    public static String[][] checkAllPasswordsAndPutItIntoTwoDimArray (String[] passwords) {
+        int k = 4;
+        String[][] array2D = new String[passwords.length][k];
+        for (int i = 0; i < passwords.length; i++) {
+            String singlePassword = passwords[i];
+            //'String.valueOf' cast boolean to string
+            //'toString()' cast int, double...
+            String isLengthValid = String.valueOf(checkPasswordLength(singlePassword));
+            String isUpperLowerValid = String.valueOf(checkIfPasswordContainsUpperLowerCase(singlePassword));
+            String isNumberPresent = String.valueOf(checkIfPasswordContainsNumber(singlePassword));
+
+            //while-loop works because fist index increments in the loop
+
+            int zeile = i;
+            while (zeile < passwords.length){
+                array2D[zeile][0] = singlePassword;
+                array2D[zeile][1] = isLengthValid;
+                array2D[zeile][2] = isUpperLowerValid;
+                array2D[zeile][3] = isNumberPresent;
+                zeile++;
+            }
+
+            //for-loop dosn`t work because fist index increments after the loop
+
+            /*for (int zeile = 0; zeile < array2D.length; zeile++) {
+            array2D[zeile][0] = singlePassword;
+            array2D[zeile][1] = isLengthValid;
+            array2D[zeile][2] = isUpperLowerValid;
+            array2D[zeile][3] = isNumberPresent;
+        }*/
+
+        }return array2D;
     }
 
     public static boolean checkPasswordLength (String password){
