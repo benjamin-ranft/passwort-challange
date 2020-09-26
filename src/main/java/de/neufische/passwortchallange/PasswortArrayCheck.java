@@ -14,7 +14,7 @@ public class PasswortArrayCheck {
 
         System.out.println(passwords[2]);
 
-        String[][] passwordsTwoDim = checkAllPasswords(passwords);
+        String[][] passwordsTwoDim = checkAllPasswordsAndPutItIntoTwoDimArray(passwords);
         //'Arrays.deepToString()' converts multi-dimensional array to strings
         System.out.println(Arrays.deepToString(passwordsTwoDim));
     }
@@ -35,7 +35,7 @@ public class PasswortArrayCheck {
         return true;
     }
 
-    public static String[][] checkAllPasswords (String[] passwords) {
+    public static String[][] checkAllPasswordsAndPutItIntoTwoDimArray (String[] passwords) {
         int k = 4;
         String[][] array2D = new String[passwords.length][k];
         for (int i = 0; i < passwords.length; i++) {
