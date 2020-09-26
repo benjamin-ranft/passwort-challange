@@ -13,7 +13,6 @@ public class PasswortArrayCheck {
 
 
         System.out.println(passwords[2]);
-
     }
 
 
