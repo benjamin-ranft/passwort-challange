@@ -15,7 +15,7 @@ class PasswortArrayCheckTest {
 
     @Test
     public void checkPasswordLongEnoughTest() {
-        String password = "HUNDjdhfgedgdfgd";
+        String password = "HUND";
 
         boolean isPasswordLongEnough = PasswortArrayCheck.checkPasswordLength(password);
         assertTrue(isPasswordLongEnough);
